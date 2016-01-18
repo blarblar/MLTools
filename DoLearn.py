@@ -7,20 +7,7 @@ from sklearn import cross_validation
 from sklearn import grid_search
 from sklearn import ensemble
 from sklearn import preprocessing
-
-def mockData():
-    rand = []
-    classPartOne = []
-    classPartTwo = []
-    c = []
-    
-    for i in range(0, 1000):
-        rand.append(random.randint(0, 10))
-        classPartOne.append(random.randint(-10, 10))
-        classPartTwo.append(random.randint(0, 100))
-        c.append(0 if classPartOne[-1] < 0 and classPartTwo[-1] % 2 == 0 else 1)
-    df = pd.DataFrame({ "Random" : rand, "Col1" : classPartOne, "Col2" : classPartTwo, "Dep" : c})
-    return df
+ 
 
 def doLearn(dataframe, column="Dep"):
     print(doSVM(dataframe, column))
